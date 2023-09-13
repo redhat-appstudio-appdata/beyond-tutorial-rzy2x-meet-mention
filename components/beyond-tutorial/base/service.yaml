@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: beyond-tutorial
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: beyond-tutorial
+    app.kubernetes.io/part-of: beyond-tutorial
+  name: beyond-tutorial
+spec:
+  ports:
+  - name: "8000"
+    port: 8000
+    targetPort: 8000
+  selector:
+    app.kubernetes.io/instance: beyond-tutorial
+status:
+  loadBalancer: {}
